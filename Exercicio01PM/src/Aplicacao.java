@@ -1,33 +1,33 @@
 import java.util.Scanner;
 
 /**
- * @author Bruna Silva AplicaÁ„o que ir· definir se a pessoa que est· se
- *         cadastrando no sistema È um cliente ou um funcion·rio
+ * @author Bruna Silva Aplica√ß√£o que ir√° definir se a pessoa que est√° se
+ *         cadastrando no sistema √© um cliente ou um funcion√°rio
  * 
  */
 public class Aplicacao {
 
 	public static void main(String[] args) {
 		Pessoa p = new Pessoa("Bruna", 19, "f");
-		Conta c = new Conta("Bruna", 19, "f", "fisica", "14249121640");
+		Conta c = new Conta("Bruna", 19, "f", "fisica", "12365478999");
 		Funcionario f = new Funcionario("Bruna", 19, "f", 1, 999, "Caixa");
 		Cliente d = new Cliente("Bruna", 19, "f", "rua das aboboras", "3133333333");
 		Scanner dados = new Scanner(System.in);
 		Scanner entrada = new Scanner(System.in);
 		/**
-		 * Pergunta ao usu·rio se ele È um funcion·rio ou cliente, sendo assim,
-		 * h· duas opÁıes, 1 e 2)
+		 * Pergunta ao usu√°rio se ele √© um funcion√°rio ou cliente, sendo assim,
+		 * h√° duas op√ß√µes, 1 e 2)
 		 * 
 		 */
 
-		System.out.println("Digite 1 para Funcion·rio ou 2 para Cliente: ");
+		System.out.println("Digite 1 para Funcion√°rio ou 2 para Cliente: ");
 		int TipoPessoa = entrada.nextInt();
 		switch (TipoPessoa) {
 		/**
-		 * Caso o usu·rio seja um funcion·rio, ele dever· responder as seguintes
-		 * perguntas: nome, idade, cpf, sexo, salario, cargo e o sistema ir·
-		 * gerar um identificador. Ao final ir· conferir se o cpf È v·lido e se
-		 * È maior de idade.
+		 * Caso o usu√°rio seja um funcion√°rio, ele dever√° responder as seguintes
+		 * perguntas: nome, idade, cpf, sexo, salario, cargo e o sistema ir√°
+		 * gerar um identificador. Ao final ir√° conferir se o cpf √© v√°lido e se
+		 * √© maior de idade.
 		 * 
 		 */
 		case 1:
@@ -45,29 +45,29 @@ public class Aplicacao {
 			System.out.println("Digite o cargo: \n ");
 			dados.nextLine();
 			f.setCargo(dados.nextLine());
-			System.out.println("O identificador do funcion·rio È:  \n" + Funcionario.getId());
+			System.out.println("O identificador do funcion√°rio √©:  \n" + Funcionario.getId());
 			System.out.println("Nome: \n" + p.getNome() + " Idade: \n" + p.getIdade() + "Cpf: \n" + c.getCpf()
-					+ "Sexo: \n" + p.getSexo() + "Sal·rio: \n" + f.getSalario() + "Cargo: \n" + f.getCargo());
+					+ "Sexo: \n" + p.getSexo() + "Sal√°rio: \n" + f.getSalario() + "Cargo: \n" + f.getCargo());
 
 			if (p.ehMaior(p.getIdade())) {
-				System.out.println("… maior de idade");
+				System.out.println("√â maior de idade");
 			} else
-				System.out.println("… menor de idade");
+				System.out.println("√â menor de idade");
 
 			/**
-			 * Verifica se o numero do cpf È correto ou n„o
+			 * Verifica se o numero do cpf √© correto ou n√£o
 			 */
 			if (c.ehCpf(c.getCpf())) {
-				System.out.println("O numero do cpf È valido");
+				System.out.println("O numero do cpf √© valido");
 			} else
 				System.out.println("Numero incorreto");
 
 			break;
 		/**
-		 * Caso o usu·rio seja um cliente, ser· solicitado que ele preencha os
-		 * seguintes dados: nome, idade, cpf, sexo, endereÁo e telefone. Ao
-		 * final tambÈm ir· conferir se o cliente È maior de idade e se o cpf È
-		 * v·lido.
+		 * Caso o usu√°rio seja um cliente, ser√° solicitado que ele preencha os
+		 * seguintes dados: nome, idade, cpf, sexo, endere√ßo e telefone. Ao
+		 * final tamb√©m ir√° conferir se o cliente √© maior de idade e se o cpf √©
+		 * v√°lido.
 		 * 
 		 */
 		case 2:
@@ -79,28 +79,28 @@ public class Aplicacao {
 			c.setCpf(dados.nextLine());
 			System.out.println("Digite F para sexo feminino ou M para masculino:");
 			p.setSexo(dados.nextLine());
-			System.out.println("Digite o endereÁo:  ");
+			System.out.println("Digite o endere√ßo:  ");
 			d.setEndereco(dados.nextLine());
-			System.out.println("Digite o telefone(apenas n˙meros): ");
+			System.out.println("Digite o telefone(apenas n√∫meros): ");
 			d.setTelefone(dados.nextLine());
 			System.out.println("Nome: " + p.getNome() + "Idade: " + p.getIdade() + "Cpf: " + c.getCpf() + "Sexo: "
-					+ p.getSexo() + "EndereÁo: " + d.getEndereco() + "Telefone: " + d.getTelefone());
+					+ p.getSexo() + "Endere√ßo: " + d.getEndereco() + "Telefone: " + d.getTelefone());
 
 			if (p.ehMaior(p.getIdade())) {
-				System.out.println("… maior de idade");
+				System.out.println("√â maior de idade");
 			} else
-				System.out.println("… menor de idade");
+				System.out.println("√â menor de idade");
 
 			/**
-			 * Verifica se o numero do cpf È correto ou n„o
+			 * Verifica se o numero do cpf √© correto ou n√£o
 			 */
 			if (c.ehCpf(c.getCpf())) {
-				System.out.println("O numero do cpf È valido");
+				System.out.println("O numero do cpf √© valido");
 			} else
 				System.out.println("Numero incorreto");
 			break;
 		default:
-			System.out.println("Comando inv·lido");
+			System.out.println("Comando inv√°lido");
 			break;
 		}
 
